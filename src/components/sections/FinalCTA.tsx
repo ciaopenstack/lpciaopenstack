@@ -24,7 +24,7 @@ export function FinalCTA() {
 
       <Container className="relative z-10">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-gradient-gold">
             {landingData.finalCTA.title}
           </h2>
           <p className="text-xl md:text-2xl text-muted font-medium max-w-2xl">

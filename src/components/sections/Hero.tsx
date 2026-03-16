@@ -61,7 +61,7 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h1 className="hero-text-element text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+              <h1 className="hero-text-element text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-gradient-gold">
                 {landingData.hero.title}
               </h1>
               <p className="hero-text-element text-xl md:text-2xl font-medium text-primary-400">

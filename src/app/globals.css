@@ -67,4 +67,16 @@ body {
   .text-gradient-primary {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
   }
+  .text-gradient-gold {
+    display: inline-block;
+    background: linear-gradient(to right, #FFD700 0%, #FFD700 65%, #FF4500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 0 12px rgba(255, 69, 0, 0.25));
+  }
+  .gradient-gold-bg {
+    background: linear-gradient(to right, #FFD700 0%, #FFD700 65%, #FF4500 100%);
+  }
 }
