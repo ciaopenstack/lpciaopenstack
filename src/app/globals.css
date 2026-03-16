@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0c;
+  --color-foreground: #ffffff;
+  --color-muted: #a1a1aa;
+  
+  /* Laranja Premium */
+  --color-primary-50: #fff3ed;
+  --color-primary-100: #ffe4d4;
+  --color-primary-200: #ffc9a8;
+  --color-primary-300: #ffa571;
+  --color-primary-400: #ff7a33;
+  --color-primary-500: #ff5b00; /* Main Accent */
+  --color-primary-600: #eb4800;
+  --color-primary-700: #c33402;
+  --color-primary-800: #9a2b0a;
+  --color-primary-900: #7c250e;
+  --color-primary-950: #431005;
+
+  /* Superfícies Premium */
+  --color-surface-50: #27272a;
+  --color-surface-100: #1a1a1e;
+  --color-surface-200: #121214;
+  --color-surface-300: #0a0a0c;
+
+  /* Status */
+  --color-success: #10b981;
+  --color-info: #3b82f6;
+  --color-danger: #ef4444;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  :root {
+    --background: #0a0a0c;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utilitários Visuais */
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface-100/40 backdrop-blur-md border border-white/10;
+  }
+  .glass-panel-hover {
+    @apply hover:bg-surface-100/60 transition-colors duration-300;
+  }
+  .glow-primary {
+    box-shadow: 0 0 40px -10px rgba(255, 91, 0, 0.15);
+  }
+  .glow-primary-strong {
+    box-shadow: 0 0 60px -15px rgba(255, 91, 0, 0.3);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70;
+  }
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+}
