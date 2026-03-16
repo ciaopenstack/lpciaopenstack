@@ -1,5 +1,4 @@
 import { Container } from "../ui/Container";
-import { SectionHeading } from "../ui/SectionHeading";
 import { landingData } from "@/data/landing";
 import { GlassPanel } from "../ui/GlassPanel";
 import { Database, TrendingUp, Users, Activity } from "lucide-react";

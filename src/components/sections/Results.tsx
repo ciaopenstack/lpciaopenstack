@@ -28,7 +28,7 @@ export function Results() {
                 label={metrics[i].label}
                 description={item}
                 icon={metrics[i].icon}
-                accentColor={metrics[i].color as any}
+                accentColor={metrics[i].color as "primary" | "success" | "info" | "danger" | "default"}
                 className="h-full"
               />
             ))}

@@ -8,7 +8,7 @@ import { StatusBadge } from "../ui/StatusBadge";
 import { GlassPanel } from "../ui/GlassPanel";
 import { GridBackground } from "../ui/GridBackground";
 import { BlurOrb } from "../ui/BlurOrb";
-import { CheckCircle2, Play, ArrowRight, MessageCircle, BarChart3, BotMessageSquare } from "lucide-react";
+import { CheckCircle2, Play, MessageCircle, BarChart3, BotMessageSquare } from "lucide-react";
 import gsap from "gsap";
 
 export function Hero() {
