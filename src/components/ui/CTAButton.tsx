@@ -10,7 +10,7 @@ interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
   ({ className, variant = "primary", size = "md", children, icon, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e6cf4a]";
+    const baseStyles = "glass-btn-reflection inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e6cf4a]";
     
     const variants = {
       primary: "bg-[#e6cf4a]/90 backdrop-blur-md text-surface-300 font-bold border border-[#e6cf4a]/30 shadow-[0_4px_20px_rgba(230,207,74,0.2)] hover:scale-105 hover:bg-[#e6cf4a] hover:shadow-[0_8px_32px_rgba(230,207,74,0.35)] hover:border-[#e6cf4a]/50 active:shadow-[0_2px_10px_rgba(230,207,74,0.15)]",
