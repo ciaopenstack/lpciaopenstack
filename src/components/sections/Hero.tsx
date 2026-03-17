@@ -8,7 +8,7 @@ import { StatusBadge } from "../ui/StatusBadge";
 import { GlassPanel } from "../ui/GlassPanel";
 import { GridBackground } from "../ui/GridBackground";
 import { BlurOrb } from "../ui/BlurOrb";
-import { CheckCircle2, Play, MessageCircle, BarChart3, BotMessageSquare } from "lucide-react";
+import { Play, MessageCircle, BarChart3, BotMessageSquare } from "lucide-react";
 import gsap from "gsap";
 
 export function Hero() {
@@ -68,9 +68,22 @@ export function Hero() {
                 {landingData.hero.subtitle}
               </p>
               <p className="hero-text-element text-lg text-muted leading-relaxed mt-2 max-w-xl">
-                {landingData.hero.description}
+                O <span className="text-white font-medium">Sistema Inteligente de Atendimento da CiaOpenStack</span> organiza seus leads, qualifica automaticamente e acompanha cada conversa para que nenhum cliente interessado seja perdido. <span className="text-white font-medium">Tudo isso sem precisar contratar mais pessoas ou usar várias ferramentas diferentes.</span>
               </p>
             </div>
+
+            <div className="hero-text-element flex flex-wrap items-center gap-y-3 gap-x-6 pt-4">
+              {landingData.hero.featureBadges.map((badge, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm text-white/80 font-medium">
+                  <span className="text-base">{badge.emoji}</span>
+                  <span>{badge.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="hero-text-element text-sm font-semibold text-primary-400 pt-2">
+              {landingData.hero.implementationNote}
+            </p>
 
             <div className="hero-text-element flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               <CTAButton size="lg" icon={<span className="ml-1">→</span>}>
@@ -79,15 +92,6 @@ export function Hero() {
               <CTAButton variant="outline" size="lg" icon={<Play size={18} />}>
                 {landingData.hero.secondaryCta}
               </CTAButton>
-            </div>
-
-            <div className="hero-text-element flex flex-wrap items-center gap-y-3 gap-x-6 pt-4">
-              {landingData.hero.checkItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-muted font-medium">
-                  <CheckCircle2 size={16} className="text-emerald-500" />
-                  <span>{item}</span>
-                </div>
-              ))}
             </div>
           </div>
 
