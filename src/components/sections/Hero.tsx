@@ -72,7 +72,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="hero-text-element flex flex-wrap gap-4 pt-4">
+            <div className="hero-text-element flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               <CTAButton size="lg" icon={<span className="ml-1">→</span>}>
                 {landingData.hero.primaryCta}
               </CTAButton>
