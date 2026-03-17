@@ -12,7 +12,7 @@ export function Problem() {
             title={landingData.problem.title}
           />
           
-          <div className="mt-16 w-full max-w-2xl bg-surface-200 rounded-3xl p-8 md:p-12 border border-white/5 relative overflow-hidden">
+          <div className="mt-16 w-full max-w-2xl bg-surface-100/40 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/8 shadow-[0_4px_24px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.05)] relative overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent" />
             
             <p className="text-xl font-medium text-white mb-8">

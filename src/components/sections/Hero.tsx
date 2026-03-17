@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" ref={containerRef}>
       {/* Background Elements */}
-      <GridBackground className="absolute inset-0 z-0" />
+      <GridBackground className="absolute inset-0 z-0" intensity={0.06} />
       <BlurOrb color="primary" position="top-right" className="opacity-40" />
       <BlurOrb color="blue" position="bottom-left" className="opacity-20" />
 
@@ -61,7 +61,7 @@ export function Hero() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h1 className="hero-text-element text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+              <h1 className="hero-text-element text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-gradient-gold">
                 {landingData.hero.title}
               </h1>
               <p className="hero-text-element text-xl md:text-2xl font-medium text-primary-400">
@@ -72,7 +72,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="hero-text-element flex flex-wrap gap-4 pt-4">
+            <div className="hero-text-element flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
               <CTAButton size="lg" icon={<span className="ml-1">→</span>}>
                 {landingData.hero.primaryCta}
               </CTAButton>
@@ -94,7 +94,7 @@ export function Hero() {
           {/* Right Column: Premium Mock Dashboard */}
           <div className="hero-image-element relative mx-auto w-full max-w-[600px] lg:max-w-none">
             {/* Main Application Window */}
-            <GlassPanel className="p-1 rounded-2xl border border-white/10 shadow-2xl bg-[#0F0F13]/80 backdrop-blur-xl aspect-square md:aspect-auto md:h-[500px]">
+            <GlassPanel className="p-1 rounded-2xl border border-white/10 shadow-2xl bg-[#0F0F13]/80 backdrop-blur-xl aspect-[3/4] sm:aspect-square md:aspect-auto md:h-[500px]">
               
               {/* App Header */}
               <div className="h-12 border-b border-white/5 flex items-center px-4 gap-2">
@@ -107,7 +107,7 @@ export function Hero() {
               </div>
 
               {/* App Body - Dashboard Layout */}
-              <div className="p-6 grid grid-cols-2 gap-4 h-[calc(100%-3rem)]">
+              <div className="p-3 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 h-[calc(100%-3rem)] overflow-hidden">
                 
                 {/* Left col dashboard metrics */}
                 <div className="flex flex-col gap-4">
@@ -135,7 +135,7 @@ export function Hero() {
                 </div>
 
                 {/* Right col dashboard lists */}
-                <div className="bg-surface-100 rounded-xl p-4 border border-white/5 flex flex-col gap-3">
+                <div className="bg-surface-100 rounded-xl p-3 sm:p-4 border border-white/5 flex flex-col gap-2 sm:gap-3">
                   <p className="text-xs text-muted font-medium mb-1">Últimos Atendimentos (IA)</p>
                   
                   {/* List Items */}
@@ -157,19 +157,19 @@ export function Hero() {
             </GlassPanel>
 
             {/* Floating Badges */}
-            <div className="hero-floating-badge absolute -top-4 -right-6 lg:-right-12">
+            <div className="hero-floating-badge absolute -top-4 right-2 sm:-right-6 lg:-right-12">
               <StatusBadge status="success" pulse icon={<MessageCircle size={14} />}>
                 WhatsApp Conectado
               </StatusBadge>
             </div>
             
-            <div className="hero-floating-badge absolute top-1/2 -left-8 lg:-left-16 shadow-2xl">
+            <div className="hero-floating-badge absolute top-1/2 -left-2 sm:-left-8 lg:-left-16 shadow-2xl">
               <StatusBadge status="warning" icon={<BotMessageSquare size={14} className="text-primary-400" />} className="bg-[#1A1A1E]/90 border-primary-500/30">
-                <span className="text-white font-medium">IA qualificando leads</span>
+                <span className="text-white font-medium text-xs sm:text-sm">IA qualificando leads</span>
               </StatusBadge>
             </div>
             
-            <div className="hero-floating-badge absolute -bottom-6 right-8 lg:-bottom-6 lg:right-10 shadow-2xl">
+            <div className="hero-floating-badge absolute -bottom-6 right-4 sm:right-8 lg:-bottom-6 lg:right-10 shadow-2xl">
               <div className="glass-panel px-4 py-3 rounded-xl flex items-center gap-3 bg-[#1A1A1E]/95 border-white/10">
                 <div className="w-8 h-8 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400">
                   <BarChart3 size={16} />

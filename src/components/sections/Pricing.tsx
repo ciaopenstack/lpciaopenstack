@@ -19,7 +19,7 @@ export function Pricing() {
             <div className="absolute inset-0 bg-primary-500/20 blur-[100px] rounded-full pointer-events-none"></div>
 
             {/* Pricing Card Principal */}
-            <div className="relative z-10 bg-surface-100 rounded-3xl p-8 md:p-12 border border-primary-500/30 shadow-2xl flex flex-col lg:flex-row gap-12">
+            <div className="relative z-10 bg-surface-100/50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex flex-col lg:flex-row gap-12">
               
               {/* Esquerda: Info do Plano */}
               <div className="flex-1 flex flex-col gap-6">
@@ -47,7 +47,7 @@ export function Pricing() {
               </div>
 
               {/* Direita: Preços e CTA */}
-              <div className="lg:w-[400px] flex flex-col gap-6 bg-surface-200/50 p-8 rounded-2xl border border-white/5">
+              <div className="lg:w-[400px] flex flex-col gap-6 bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
                 
                 {/* Taxa de Implementação */}
                 <div className="flex flex-col gap-1 pb-6 border-b border-white/10">
