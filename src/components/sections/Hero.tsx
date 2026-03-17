@@ -46,7 +46,7 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" ref={containerRef}>
       {/* Background Elements */}
-      <GridBackground className="absolute inset-0 z-0" />
+      <GridBackground className="absolute inset-0 z-0" intensity={0.06} />
       <BlurOrb color="primary" position="top-right" className="opacity-40" />
       <BlurOrb color="blue" position="bottom-left" className="opacity-20" />
 

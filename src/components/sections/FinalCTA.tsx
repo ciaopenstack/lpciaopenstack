@@ -2,6 +2,7 @@ import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
 import { BlurOrb } from "../ui/BlurOrb";
+import { GridBackground } from "../ui/GridBackground";
 
 export function FinalCTA() {
   return (
@@ -10,17 +11,7 @@ export function FinalCTA() {
       <div className="absolute inset-0 bg-primary-500/5 z-0" />
       <BlurOrb color="primary" position="center" className="opacity-30 mix-blend-screen" />
       
-      {/* Linhas Padrão de Grid Fino */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, rgba(255,91,0,0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255,91,0,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '2rem 2rem'
-        }}
-      />
+      <GridBackground className="absolute inset-0 z-0" intensity={0.06} />
 
       <Container className="relative z-10">
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">

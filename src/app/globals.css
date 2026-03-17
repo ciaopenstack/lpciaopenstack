@@ -137,3 +137,13 @@ body {
     background: linear-gradient(to right, #FFD700 0%, #FFD700 65%, #FF4500 100%);
   }
 }
+
+/* Animação do grid background */
+@keyframes grid-drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 4rem 4rem;
+  }
+}
