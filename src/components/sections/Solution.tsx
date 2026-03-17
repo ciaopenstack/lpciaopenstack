@@ -35,45 +35,70 @@ export function Solution() {
           </div>
 
           {/* Direita: Elementos Gráficos (Cards Conectados) */}
-          <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square flex items-center justify-center">
+          <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square">
             
-            {/* Círculo Central */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-primary-500/10 border border-primary-500/20 flex items-center justify-center glow-primary z-10 backdrop-blur-md">
-              <div className="w-16 h-16 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-2xl shadow-lg shadow-primary-500/30">
-                IA
-              </div>
-            </div>
-
-            {/* Linhas de conexão abstratas */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" viewBox="0 0 400 400">
-              <line x1="200" y1="200" x2="100" y2="100" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-              <line x1="200" y1="200" x2="300" y2="100" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-              <line x1="200" y1="200" x2="100" y2="300" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
-              <line x1="200" y1="200" x2="300" y2="300" stroke="white" strokeWidth="2" strokeDasharray="4 4" />
+            {/* Linhas de conexão - SVG atrás de tudo */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-30" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+              <line x1="200" y1="200" x2="80" y2="80" stroke="white" strokeWidth="1.5" strokeDasharray="6 4" />
+              <line x1="200" y1="200" x2="320" y2="80" stroke="white" strokeWidth="1.5" strokeDasharray="6 4" />
+              <line x1="200" y1="200" x2="80" y2="320" stroke="white" strokeWidth="1.5" strokeDasharray="6 4" />
+              <line x1="200" y1="200" x2="320" y2="320" stroke="white" strokeWidth="1.5" strokeDasharray="6 4" />
             </svg>
 
-            {/* 4 Cards em volta */}
-            <div className="w-full h-full relative z-20">
-              {landingData.solution.items.map((item, i) => {
-                const positions = [
-                  "top-4 left-4 md:top-8 md:left-8",
-                  "top-4 right-4 md:top-8 md:right-8",
-                  "bottom-4 left-4 md:bottom-8 md:left-8",
-                  "bottom-4 right-4 md:bottom-8 md:right-8"
-                ];
-                
-                return (
-                  <GlassPanel 
-                    key={i} 
-                    className={`absolute w-36 h-36 md:w-48 md:h-48 p-4 flex flex-col items-center justify-center text-center gap-3 bg-surface-100/80 ${positions[i]}`}
-                  >
-                    <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
-                      {icons[i]}
-                    </div>
-                    <p className="text-sm md:text-base font-bold text-white">{item}</p>
-                  </GlassPanel>
-                )
-              })}
+            {/* Grid 3x3 para posicionar cards nos cantos e IA no centro */}
+            <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-2 z-10">
+              {/* Card 0: Top-left */}
+              <div className="flex items-center justify-center">
+                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
+                    {icons[0]}
+                  </div>
+                  <p className="text-xs md:text-sm font-bold text-white">{landingData.solution.items[0]}</p>
+                </GlassPanel>
+              </div>
+              {/* Top-center: vazio */}
+              <div />
+              {/* Card 1: Top-right */}
+              <div className="flex items-center justify-center">
+                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
+                    {icons[1]}
+                  </div>
+                  <p className="text-xs md:text-sm font-bold text-white">{landingData.solution.items[1]}</p>
+                </GlassPanel>
+              </div>
+              {/* Middle-left: vazio */}
+              <div />
+              {/* Center: Círculo IA */}
+              <div className="flex items-center justify-center">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-primary-500/10 border border-primary-500/20 flex items-center justify-center glow-primary backdrop-blur-md">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl md:text-2xl shadow-lg shadow-primary-500/30">
+                    IA
+                  </div>
+                </div>
+              </div>
+              {/* Middle-right: vazio */}
+              <div />
+              {/* Card 2: Bottom-left */}
+              <div className="flex items-center justify-center">
+                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
+                    {icons[2]}
+                  </div>
+                  <p className="text-xs md:text-sm font-bold text-white">{landingData.solution.items[2]}</p>
+                </GlassPanel>
+              </div>
+              {/* Bottom-center: vazio */}
+              <div />
+              {/* Card 3: Bottom-right */}
+              <div className="flex items-center justify-center">
+                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                  <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
+                    {icons[3]}
+                  </div>
+                  <p className="text-xs md:text-sm font-bold text-white">{landingData.solution.items[3]}</p>
+                </GlassPanel>
+              </div>
             </div>
             
           </div>
