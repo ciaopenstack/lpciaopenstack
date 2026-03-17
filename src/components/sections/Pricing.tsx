@@ -25,7 +25,7 @@ export function Pricing() {
               <div className="flex-1 flex flex-col gap-6">
                 <div>
                   <div className="inline-flex px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-bold tracking-wider uppercase mb-4 border border-primary-500/20">
-                    OFERTA PRINCIPAL
+                    PREÇO
                   </div>
                   <h3 className="text-3xl font-bold text-white tracking-tight">{landingData.pricing.planName}</h3>
                   <p className="text-muted mt-2">{landingData.pricing.subtitle}</p>
@@ -51,7 +51,7 @@ export function Pricing() {
                 
                 {/* Taxa de Implementação */}
                 <div className="flex flex-col gap-1 pb-6 border-b border-white/10">
-                  <p className="text-sm font-medium text-muted">Adesão / Setup Completo</p>
+                  <p className="text-sm font-medium text-muted">Implementação</p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-lg text-white font-medium">R$</span>
                     <span className="text-4xl font-bold text-white tracking-tight">{landingData.pricing.implementation}</span>
@@ -61,7 +61,7 @@ export function Pricing() {
 
                 {/* Mensalidade */}
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm font-medium text-white">Mensalidade do Sistema</p>
+                  <p className="text-sm font-medium text-white">Mensalidade</p>
                   <div className="flex items-baseline gap-1">
                     <span className="text-lg text-primary-400 font-medium">R$</span>
                     <span className="text-5xl font-extrabold text-white tracking-tight">{landingData.pricing.monthly}</span>
@@ -71,6 +71,7 @@ export function Pricing() {
 
                 {/* Condições Especiais */}
                 <div className="flex flex-col gap-2 mt-2">
+                  <p className="text-sm font-medium text-white mb-2">Condições especiais:</p>
                   {landingData.pricing.conditions.map((cond, i) => (
                     <div key={i} className="flex justify-between items-center text-sm">
                       <span className="text-muted">{cond.label}:</span>

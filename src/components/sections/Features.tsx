@@ -20,7 +20,14 @@ export function Features() {
           <SectionHeading
             eyebrow={landingData.features.eyebrow}
             title={landingData.features.title}
-            description={landingData.features.description}
+            description={
+              <>
+                Perfeito para empresas que querem{" "}
+                <span className="text-white font-medium">
+                  parar de perder leads por desorganização.
+                </span>
+              </>
+            }
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16 mt-8">
