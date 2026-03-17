@@ -69,7 +69,7 @@ body {
   }
   .text-gradient-gold {
     display: inline-block;
-    background: linear-gradient(to right, #FFD700 0%, #FFD700 65%, #FF4500 100%);
+    background: linear-gradient(to right, #e6cf4a 0%, #f89549 60%, #ea764c 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

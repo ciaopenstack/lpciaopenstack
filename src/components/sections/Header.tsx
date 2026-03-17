@@ -31,7 +31,7 @@ export function Header() {
       <Container className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg gradient-gold-bg flex items-center justify-center shadow-lg shadow-[#FF4500]/30">
+          <div className="w-8 h-8 rounded-lg bg-[#e6cf4a] flex items-center justify-center shadow-lg shadow-[#e6cf4a]/30">
             <span className="text-white font-bold text-lg leading-none">C</span>
           </div>
           <span className="font-bold text-xl tracking-tight text-white">

@@ -13,7 +13,7 @@ export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
     const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95";
     
     const variants = {
-      primary: "gradient-gold-bg text-white font-bold hover:scale-105 hover:shadow-lg hover:shadow-[#FF4500]/40 hover:brightness-110",
+      primary: "bg-[#e6cf4a] text-surface-300 font-bold hover:scale-105 hover:shadow-lg hover:shadow-[#e6cf4a]/40 hover:brightness-110",
       secondary: "bg-white text-surface-300 hover:bg-gray-100",
       outline: "border border-white/20 bg-transparent text-white hover:bg-white/5",
     };
