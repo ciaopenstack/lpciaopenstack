@@ -50,10 +50,20 @@ body {
 /* Utilitários Visuais */
 @layer utilities {
   .glass-panel {
-    @apply bg-surface-100/40 backdrop-blur-md border border-white/10;
+    background: rgba(26, 26, 30, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
   .glass-panel-hover {
-    @apply hover:bg-surface-100/60 transition-colors duration-300;
+    transition: all 0.3s ease;
+  }
+  .glass-panel-hover:hover {
+    background: rgba(26, 26, 30, 0.7);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
   }
   .glow-primary {
     box-shadow: 0 0 40px -10px rgba(255, 91, 0, 0.15);

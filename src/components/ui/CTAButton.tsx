@@ -10,12 +10,12 @@ interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
   ({ className, variant = "primary", size = "md", children, icon, ...props }, ref) => {
-    const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95";
+    const baseStyles = "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e6cf4a]";
     
     const variants = {
-      primary: "bg-[#e6cf4a] text-surface-300 font-bold hover:scale-105 hover:shadow-lg hover:shadow-[#e6cf4a]/40 hover:brightness-110",
-      secondary: "bg-white text-surface-300 hover:bg-gray-100",
-      outline: "border border-white/20 bg-transparent text-white hover:bg-white/5",
+      primary: "bg-[#e6cf4a]/90 backdrop-blur-md text-surface-300 font-bold border border-[#e6cf4a]/30 shadow-[0_4px_20px_rgba(230,207,74,0.2)] hover:scale-105 hover:bg-[#e6cf4a] hover:shadow-[0_8px_32px_rgba(230,207,74,0.35)] hover:border-[#e6cf4a]/50 active:shadow-[0_2px_10px_rgba(230,207,74,0.15)]",
+      secondary: "bg-white/10 backdrop-blur-md text-white border border-white/15 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:bg-white/20 hover:border-white/25 hover:shadow-[0_8px_28px_rgba(0,0,0,0.2)] hover:-translate-y-0.5",
+      outline: "bg-white/5 backdrop-blur-sm text-white border border-white/15 hover:bg-white/10 hover:border-white/25 hover:-translate-y-0.5 shadow-[0_2px_12px_rgba(0,0,0,0.1)]",
     };
 
     const sizes = {
