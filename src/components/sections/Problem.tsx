@@ -1,7 +1,7 @@
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { landingData } from "@/data/landing";
-import { AlertCircle } from "lucide-react";
+import { XCircle } from "lucide-react";
 
 export function Problem() {
   return (
@@ -23,7 +23,7 @@ export function Problem() {
               {landingData.problem.items.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <div className="mt-0.5 w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                    <AlertCircle size={14} className="text-red-400" />
+                    <XCircle size={14} className="text-red-400" />
                   </div>
                   <span className="text-lg text-muted/90 leading-tight">{item}</span>
                 </li>

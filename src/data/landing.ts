@@ -16,11 +16,13 @@ export const landingData = {
     description: "O Sistema Inteligente de Atendimento da CiaOpenStack organiza seus leads, qualifica automaticamente e acompanha cada conversa para que nenhum cliente interessado seja perdido. Tudo isso sem precisar contratar mais pessoas ou usar várias ferramentas diferentes.",
     primaryCta: "Começar Agora",
     secondaryCta: "Ver Demonstração",
-    checkItems: [
-      "Sem cartão de crédito",
-      "Configuração em 24h",
-      "Suporte dedicado",
+    featureBadges: [
+      { emoji: "🚀", label: "Atendimento automático" },
+      { emoji: "📊", label: "Métricas de atendimento" },
+      { emoji: "🤖", label: "Qualificação inteligente de leads" },
+      { emoji: "📲", label: "Integração direta com WhatsApp" },
     ],
+    implementationNote: "Implementação a partir de R$ 997",
   },
   problem: {
     title: "O problema não é falta de leads. É falta de organização.",

@@ -9,10 +9,10 @@ export function Footer() {
           
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-6 h-6 rounded bg-primary-500 flex items-center justify-center">
-                <span className="text-white font-bold text-xs">C</span>
+              <div className="w-8 h-8 rounded-lg bg-[#e6cf4a] flex items-center justify-center shadow-lg shadow-[#e6cf4a]/30">
+                <span className="text-white font-bold text-lg leading-none">C</span>
               </div>
-              <span className="font-bold text-lg text-white">
+              <span className="font-bold text-xl tracking-tight text-white">
                 {landingData.company}
               </span>
             </div>

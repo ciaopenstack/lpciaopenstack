@@ -22,7 +22,7 @@ export function Intelligence() {
           
           {/* Esquerda: Conteúdo */}
           <div className="flex flex-col gap-8">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-gradient-gold">
               {landingData.intelligence.title}
             </h2>
             <p className="text-xl text-primary-400 font-medium">
@@ -62,26 +62,6 @@ export function Intelligence() {
                  </GlassPanel>
                ))}
             </div>
-
-            {/* Código Decorativo Simulando IA */}
-            <GlassPanel className="absolute -bottom-8 -right-8 w-64 p-4 !bg-[#0D0D10]/95 border-primary-500/20 shadow-[-10px_-10px_30px_rgba(255,91,0,0.1)] hidden md:block z-20">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex h-2 w-2 rounded-full animate-pulse bg-emerald-500"></span>
-                <span className="text-[10px] text-emerald-400 font-mono tracking-wider">PROCESSANDO DADOS</span>
-              </div>
-              <div className="space-y-2 opacity-60">
-                <div className="h-1.5 w-full bg-white/10 rounded overflow-hidden">
-                  <div className="h-full bg-primary-500 w-[65%]"></div>
-                </div>
-                <div className="h-1.5 w-full bg-white/10 rounded overflow-hidden">
-                  <div className="h-full bg-blue-500 w-[82%]"></div>
-                </div>
-                <div className="h-1.5 w-[80%] bg-white/10 rounded overflow-hidden">
-                  <div className="h-full bg-purple-500 w-[45%]"></div>
-                </div>
-              </div>
-            </GlassPanel>
-
           </div>
         </div>
       </Container>
