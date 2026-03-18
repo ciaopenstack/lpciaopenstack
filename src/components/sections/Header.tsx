@@ -52,9 +52,10 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
-          <CTAButton size="sm">{landingData.header.cta}</CTAButton>
+          <CTAButton size="sm" href={landingData.contact.whatsapp}>
+            {landingData.header.cta}
+          </CTAButton>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -79,7 +80,7 @@ export function Header() {
               {link.label}
             </a>
           ))}
-          <CTAButton className="w-full mt-2" size="md">
+          <CTAButton className="w-full mt-2" size="md" href={landingData.contact.whatsapp}>
             {landingData.header.cta}
           </CTAButton>
         </div>

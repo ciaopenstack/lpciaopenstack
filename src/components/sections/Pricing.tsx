@@ -80,7 +80,7 @@ export function Pricing() {
                   ))}
                 </div>
 
-                <CTAButton size="lg" className="w-full mt-4 text-lg py-5 shadow-[0_0_30px_rgba(255,91,0,0.25)]">
+                <CTAButton size="lg" className="w-full mt-4 text-lg py-5 shadow-[0_0_30px_rgba(255,91,0,0.25)]" href={landingData.contact.whatsapp}>
                   {landingData.pricing.cta}
                 </CTAButton>
                 

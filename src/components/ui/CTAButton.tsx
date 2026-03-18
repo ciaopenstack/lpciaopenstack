@@ -6,10 +6,11 @@ interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   icon?: React.ReactNode;
+  href?: string;
 }
 
-export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
-  ({ className, variant = "primary", size = "md", children, icon, ...props }, ref) => {
+export const CTAButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, CTAButtonProps>(
+  ({ className, variant = "primary", size = "md", children, icon, href, ...props }, ref) => {
     const baseStyles = "glass-btn-reflection inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e6cf4a]";
     
     const variants = {
@@ -24,14 +25,37 @@ export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
       lg: "px-8 py-4 text-lg",
     };
 
-    return (
-      <button
-        ref={ref}
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
-        {...props}
-      >
+    const content = (
+      <>
         {children}
         {icon && <span className="ml-2 -mr-1">{icon}</span>}
+      </>
+    );
+
+    const commonClasses = cn(baseStyles, variants[variant], sizes[size], className);
+
+    if (href) {
+      return (
+        <a
+          href={href}
+          className={commonClasses}
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={ref as React.Ref<HTMLAnchorElement>}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    return (
+      <button
+        ref={ref as React.Ref<HTMLButtonElement>}
+        className={commonClasses}
+        {...props}
+      >
+        {content}
       </button>
     );
   }

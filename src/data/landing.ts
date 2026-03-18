@@ -141,7 +141,7 @@ export const landingData = {
   year: 2026,
   contact: {
     instagram: "https://instagram.com/ciaopenstack",
-    whatsapp: "https://wa.me/5511999999999",
+    whatsapp: "https://wa.link/9q5c54",
     email: "contato@ciaopenstack.com.br",
   },
 };

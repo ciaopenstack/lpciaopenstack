@@ -81,10 +81,10 @@ export function Hero() {
             </p>
 
             <div className="hero-text-element flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
-              <CTAButton size="lg" icon={<span className="ml-1">→</span>}>
+              <CTAButton size="lg" icon={<span className="ml-1">→</span>} href={landingData.contact.whatsapp}>
                 {landingData.hero.primaryCta}
               </CTAButton>
-              <CTAButton variant="outline" size="lg" icon={<Play size={18} />}>
+              <CTAButton variant="outline" size="lg" icon={<Play size={18} />} href={landingData.contact.whatsapp}>
                 {landingData.hero.secondaryCta}
               </CTAButton>
             </div>

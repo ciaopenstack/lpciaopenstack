@@ -23,10 +23,10 @@ export function FinalCTA() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
-            <CTAButton size="lg" className="px-10 py-5 text-lg">
+            <CTAButton size="lg" className="px-10 py-5 text-lg" href={landingData.contact.whatsapp}>
               {landingData.finalCTA.primaryCta}
             </CTAButton>
-            <CTAButton variant="secondary" size="lg" className="px-10 py-5 text-lg">
+            <CTAButton variant="secondary" size="lg" className="px-10 py-5 text-lg" href={landingData.contact.whatsapp}>
               {landingData.finalCTA.secondaryCta}
             </CTAButton>
           </div>
