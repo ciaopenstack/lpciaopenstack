@@ -23,7 +23,7 @@ export function HowItWorks() {
                   {step.step}
                 </div>
                 
-                <GlassPanel className="w-full flex-1 text-center p-6 bg-surface-200/50 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-start">
+                <GlassPanel interactive className="w-full flex-1 text-center p-6 bg-surface-200/50 hover:-translate-y-1 transition-transform duration-300 flex flex-col justify-start">
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-muted leading-relaxed text-sm">
                     {step.description}

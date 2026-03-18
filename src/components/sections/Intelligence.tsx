@@ -51,7 +51,7 @@ export function Intelligence() {
             {/* Grid abstrato simulando painel de Data Science */}
             <div className="grid grid-cols-2 gap-4">
                {landingData.intelligence.items.map((item, i) => (
-                 <GlassPanel key={i} className="p-5 flex flex-col gap-4 bg-surface-200/80 border-white/5">
+                 <GlassPanel interactive key={i} className="p-5 flex flex-col gap-4 bg-surface-200/80 border-white/5">
                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
                      {dataIcons[i]}
                    </div>

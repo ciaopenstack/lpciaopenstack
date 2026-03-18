@@ -49,7 +49,7 @@ export function Solution() {
             <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-2 z-10">
               {/* Card 0: Top-left */}
               <div className="flex items-center justify-center">
-                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[0]}
                   </div>
@@ -60,7 +60,7 @@ export function Solution() {
               <div />
               {/* Card 1: Top-right */}
               <div className="flex items-center justify-center">
-                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[1]}
                   </div>
@@ -81,7 +81,7 @@ export function Solution() {
               <div />
               {/* Card 2: Bottom-left */}
               <div className="flex items-center justify-center">
-                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[2]}
                   </div>
@@ -92,7 +92,7 @@ export function Solution() {
               <div />
               {/* Card 3: Bottom-right */}
               <div className="flex items-center justify-center">
-                <GlassPanel className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[3]}
                   </div>
