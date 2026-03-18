@@ -55,11 +55,6 @@ export function Hero() {
           
           {/* Left Column: Copy */}
           <div className="flex flex-col gap-8 max-w-2xl">
-            <div className="hero-text-element inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 w-fit backdrop-blur-sm">
-              <span className="flex h-2 w-2 rounded-full bg-primary-500"></span>
-              <span className="text-sm font-medium text-white/90">{landingData.hero.badge}</span>
-            </div>
-
             <div className="flex flex-col gap-4">
               <h1 className="hero-text-element text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-gradient-gold">
                 {landingData.hero.title}
