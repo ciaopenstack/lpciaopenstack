@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
+
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
@@ -90,96 +92,66 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column: Premium Mock Dashboard */}
-          <div className="hero-image-element relative mx-auto w-full max-w-[600px] lg:max-w-none">
-            {/* Main Application Window */}
-            <GlassPanel className="p-1 rounded-2xl border border-white/10 shadow-2xl bg-[#0F0F13]/80 backdrop-blur-xl aspect-[3/4] sm:aspect-square md:aspect-auto md:h-[500px]">
+          {/* Right Column: App Interface Preview - New Concept: Floating & Glow */}
+          <div className="hero-image-element relative mx-auto w-full max-w-[750px] lg:max-w-none">
+            {/* Ambient Glow behind the image */}
+            <div className="absolute inset-0 z-0">
+              <BlurOrb 
+                color="primary" 
+                position="center" 
+                className="opacity-40 scale-150 blur-[150px] animate-pulse" 
+              />
+            </div>
+
+            {/* Floating Container */}
+            <div className="hero-main-visual relative z-10 hero-floating-animation">
+              {/* Main Application Window - Snug and Glassy */}
+                <Image 
+                  src="/analise-funils-desktop.webp" 
+                  alt="Interface CiaOpenStack - Análise de Funis" 
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-cover rounded-[20px]"
+                  priority
+                />
+
+              {/* Floating Badges - Positioned as independent layers */}
+              <div className="hero-floating-badge absolute top-8 left-10 z-20 shadow-xl transform hover:scale-105 transition-transform">
+                <StatusBadge status="success" pulse icon={<MessageCircle size={14} />}>
+                  WhatsApp Conectado
+                </StatusBadge>
+              </div>
               
-              {/* App Header */}
-              <div className="h-12 border-b border-white/5 flex items-center px-4 gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-surface-50"></div>
-                  <div className="w-3 h-3 rounded-full bg-surface-50"></div>
-                  <div className="w-3 h-3 rounded-full bg-surface-50"></div>
-                </div>
-                <div className="mx-auto flex h-6 w-48 rounded bg-white/5"></div>
+              <div className="hero-floating-badge absolute top-1/4 -right-12 z-20 shadow-2xl transform hover:scale-105 transition-transform">
+                <StatusBadge status="warning" icon={<BotMessageSquare size={14} className="text-primary-400" />} className="bg-[#1A1A1E]/95 border-primary-500/30 backdrop-blur-md">
+                  <span className="text-white font-medium text-xs sm:text-sm">IA qualificando leads</span>
+                </StatusBadge>
               </div>
-
-              {/* App Body - Dashboard Layout */}
-              <div className="p-3 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 h-[calc(100%-3rem)] overflow-hidden">
-                
-                {/* Left col dashboard metrics */}
-                <div className="flex flex-col gap-4">
-                  <div className="bg-surface-100 rounded-xl p-4 border border-white/5 h-24">
-                    <p className="text-xs text-muted font-medium mb-1">Taxa de Conversão</p>
-                    <p className="text-2xl font-bold text-white mb-2">24.8%</p>
-                    <div className="flex items-center gap-1 text-[10px] text-emerald-400 font-medium">
-                      <span className="flex h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                      +4.2% esta semana
-                    </div>
+              
+              <div className="hero-floating-badge absolute bottom-20 left-1/4 z-20 shadow-2xl transform hover:scale-105 transition-transform">
+                <div className="glass-panel px-5 py-3.5 rounded-2xl flex items-center gap-4 bg-[#1A1A1E]/90 border-white/10 backdrop-blur-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)]">
+                  <div className="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 shadow-inner">
+                    <BarChart3 size={20} />
                   </div>
-                  
-                  <div className="bg-white/5 rounded-xl p-4 border border-white/5 flex-1 relative overflow-hidden flex flex-col justify-end">
-                    <p className="text-xs text-muted font-medium absolute top-4 left-4">Leads Recebidos</p>
-                    {/* Fake Bar Chart */}
-                    <div className="flex items-end gap-2 h-20 mt-6 mt-auto">
-                      <div className="w-full bg-primary-500/20 rounded-t-sm h-[40%]"></div>
-                      <div className="w-full bg-primary-500/40 rounded-t-sm h-[60%]"></div>
-                      <div className="w-full bg-primary-500/60 rounded-t-sm h-[85%]"></div>
-                      <div className="w-full bg-primary-500/80 rounded-t-sm h-[70%]"></div>
-                      <div className="w-full bg-primary-500 rounded-t-sm h-[100%] shadow-[0_0_15px_rgba(255,91,0,0.4)]"></div>
-                      <div className="w-full bg-primary-500/60 rounded-t-sm h-[50%]"></div>
-                    </div>
+                  <div>
+                    <p className="text-[10px] text-muted uppercase tracking-wider mb-0.5 font-bold">Leads Hoje</p>
+                    <p className="text-lg font-black text-white leading-tight">+124</p>
                   </div>
                 </div>
-
-                {/* Right col dashboard lists */}
-                <div className="bg-surface-100 rounded-xl p-3 sm:p-4 border border-white/5 flex flex-col gap-2 sm:gap-3">
-                  <p className="text-xs text-muted font-medium mb-1">Últimos Atendimentos (IA)</p>
-                  
-                  {/* List Items */}
-                  {[1,2,3,4].map((i) => (
-                    <div key={i} className="flex items-center gap-3 p-2 rounded-lg bg-surface-200 border border-white/[0.02]">
-                      <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
-                        <MessageCircle size={14} className="text-muted" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="h-2 w-20 bg-white/20 rounded mb-1.5"></div>
-                        <div className="h-1.5 w-12 bg-white/10 rounded"></div>
-                      </div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_5px_rgba(16,185,129,0.5)]"></div>
-                    </div>
-                  ))}
-                </div>
-
-              </div>
-            </GlassPanel>
-
-            {/* Floating Badges */}
-            <div className="hero-floating-badge absolute -top-4 right-2 sm:-right-6 lg:-right-12">
-              <StatusBadge status="success" pulse icon={<MessageCircle size={14} />}>
-                WhatsApp Conectado
-              </StatusBadge>
-            </div>
-            
-            <div className="hero-floating-badge absolute top-1/2 -left-2 sm:-left-8 lg:-left-16 shadow-2xl">
-              <StatusBadge status="warning" icon={<BotMessageSquare size={14} className="text-primary-400" />} className="bg-[#1A1A1E]/90 border-primary-500/30">
-                <span className="text-white font-medium text-xs sm:text-sm">IA qualificando leads</span>
-              </StatusBadge>
-            </div>
-            
-            <div className="hero-floating-badge absolute -bottom-6 right-4 sm:right-8 lg:-bottom-6 lg:right-10 shadow-2xl">
-              <div className="glass-panel px-4 py-3 rounded-xl flex items-center gap-3 bg-[#1A1A1E]/95 border-white/10">
-                <div className="w-8 h-8 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400">
-                  <BarChart3 size={16} />
-                </div>
-                <div>
-                  <p className="text-xs text-muted leading-tight mb-0.5">Leads Hoje</p>
-                  <p className="text-sm font-bold text-white leading-tight">+124</p>
-                </div>
               </div>
             </div>
 
+            {/* Addition of a CSS animation for floating effect if GSAP is not enough */}
+            <style jsx global>{`
+              @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+              }
+              .hero-floating-animation {
+                animation: float 6s ease-in-out infinite;
+              }
+            `}</style>
           </div>
         </div>
       </Container>
