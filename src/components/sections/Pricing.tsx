@@ -1,25 +1,42 @@
+"use client";
+
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Pricing() {
   return (
     <section id="pricing" className="py-24 md:py-32 relative bg-surface-300">
       <Container>
         <div className="flex flex-col gap-12 max-w-5xl mx-auto">
-          <SectionHeading
-            title="Comece a organizar suas vendas hoje"
-            description="Escolha a condição ideal para transformar seu WhatsApp em uma máquina de conversão."
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <SectionHeading
+              title="Comece a organizar suas vendas hoje"
+              description="Escolha a condição ideal para transformar seu WhatsApp em uma máquina de conversão."
+            />
+          </motion.div>
 
           <div className="relative mt-8">
             {/* Glow / Sombra colorida atrás do card principal */}
             <div className="absolute inset-0 bg-primary-500/20 blur-[100px] rounded-full pointer-events-none"></div>
 
             {/* Pricing Card Principal */}
-            <div className="relative z-10 bg-surface-100/50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex flex-col lg:flex-row gap-12">
+            {/* Pricing Card Principal */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative z-10 bg-surface-100/50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex flex-col lg:flex-row gap-12"
+            >
               
               {/* Esquerda: Info do Plano */}
               <div className="flex-1 flex flex-col gap-6">
@@ -89,7 +106,7 @@ export function Pricing() {
                 </p>
               </div>
 
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>

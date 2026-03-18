@@ -1,13 +1,22 @@
+"use client";
+
 import { Container } from "../ui/Container";
 import Image from "next/image";
 import { landingData } from "@/data/landing";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Footer() {
   return (
     <footer className="bg-surface-300 border-t border-white/5 pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
+        >
           
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
@@ -81,7 +90,7 @@ export function Footer() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted">

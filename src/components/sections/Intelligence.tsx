@@ -1,7 +1,10 @@
+"use client";
+
 import { Container } from "../ui/Container";
 import { landingData } from "@/data/landing";
 import { GlassPanel } from "../ui/GlassPanel";
 import { Database, TrendingUp, Users, Activity } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Intelligence() {
   const dataIcons = [
@@ -21,7 +24,14 @@ export function Intelligence() {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           
           {/* Esquerda: Conteúdo */}
-          <div className="flex flex-col gap-8">
+          {/* Esquerda: Conteúdo */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-8"
+          >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-gradient-gold">
               {landingData.intelligence.title}
             </h2>
@@ -31,10 +41,17 @@ export function Intelligence() {
             
             <ul className="flex flex-col gap-4">
               {landingData.intelligence.items.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-lg text-muted/90">
+                <motion.li 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                  key={i} 
+                  className="flex items-center gap-3 text-lg text-muted/90"
+                >
                   <div className="w-1.5 h-1.5 rounded-full bg-primary-500 glow-primary"></div>
                   {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
 
@@ -43,15 +60,22 @@ export function Intelligence() {
                 {landingData.intelligence.conclusion}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Direita: Elementos de Inteligência/Dados */}
-          <div className="relative mx-auto w-full max-w-[500px]">
+          {/* Direita: Elementos de Inteligência/Dados */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-[500px]"
+          >
              
             {/* Grid abstrato simulando painel de Data Science */}
             <div className="grid grid-cols-2 gap-4">
                {landingData.intelligence.items.map((item, i) => (
-                 <GlassPanel interactive key={i} className="p-5 flex flex-col gap-4 bg-surface-200/80 border-white/5">
+                 <GlassPanel interactive key={i} className="p-5 flex flex-col gap-4 bg-surface-200/80 border-white/5 hover:scale-105 transition-transform duration-300">
                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
                      {dataIcons[i]}
                    </div>
@@ -62,7 +86,7 @@ export function Intelligence() {
                  </GlassPanel>
                ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

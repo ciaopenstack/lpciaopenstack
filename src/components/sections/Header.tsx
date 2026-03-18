@@ -6,6 +6,7 @@ import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -71,23 +72,30 @@ export function Header() {
       </Container>
 
       {/* Mobile Nav */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-surface-200 border-b border-white/10 p-4 flex flex-col gap-4 md:hidden shadow-2xl">
-          {landingData.header.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-base font-medium text-white p-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-          <CTAButton className="w-full mt-2" size="md" href={landingData.contact.whatsapp}>
-            {landingData.header.cta}
-          </CTAButton>
-        </div>
-      )}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="absolute top-full left-0 right-0 bg-surface-200 border-b border-white/10 p-4 flex flex-col gap-4 md:hidden shadow-2xl overflow-hidden"
+          >
+            {landingData.header.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-base font-medium text-white p-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <CTAButton className="w-full mt-2" size="md" href={landingData.contact.whatsapp}>
+              {landingData.header.cta}
+            </CTAButton>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

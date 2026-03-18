@@ -1,8 +1,11 @@
+"use client";
+
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { landingData } from "@/data/landing";
 import { GlassPanel } from "../ui/GlassPanel";
 import { Users, Bot, Layers, Network } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Solution() {
   const icons = [
@@ -18,7 +21,13 @@ export function Solution() {
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Esquerda: Texto */}
-          <div className="flex flex-col gap-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col gap-8"
+          >
             <SectionHeading
               align="left"
               title={landingData.solution.title}
@@ -27,15 +36,28 @@ export function Solution() {
             
             <div className="flex flex-col gap-6">
               {landingData.solution.conclusion.map((text, i) => (
-                <p key={i} className="text-xl text-white font-medium border-l-2 border-primary-500 pl-4 py-1">
+                <motion.p 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 + (i * 0.1) }}
+                  key={i} 
+                  className="text-xl text-white font-medium border-l-2 border-primary-500 pl-4 py-1"
+                >
                   {text}
-                </p>
+                </motion.p>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Direita: Elementos Gráficos (Cards Conectados) */}
-          <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-square"
+          >
             
             {/* Linhas de conexão - SVG atrás de tudo */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-30" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
@@ -49,7 +71,7 @@ export function Solution() {
             <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-2 z-10">
               {/* Card 0: Top-left */}
               <div className="flex items-center justify-center">
-                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80 hover:scale-105 transition-transform">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[0]}
                   </div>
@@ -60,7 +82,7 @@ export function Solution() {
               <div />
               {/* Card 1: Top-right */}
               <div className="flex items-center justify-center">
-                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80 hover:scale-105 transition-transform">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[1]}
                   </div>
@@ -71,7 +93,7 @@ export function Solution() {
               <div />
               {/* Center: Círculo IA */}
               <div className="flex items-center justify-center">
-                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-primary-500/10 border border-primary-500/20 flex items-center justify-center glow-primary backdrop-blur-md">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-primary-500/10 border border-primary-500/20 flex items-center justify-center glow-primary backdrop-blur-md animate-pulse">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-xl md:text-2xl shadow-lg shadow-primary-500/30">
                     IA
                   </div>
@@ -81,7 +103,7 @@ export function Solution() {
               <div />
               {/* Card 2: Bottom-left */}
               <div className="flex items-center justify-center">
-                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80 hover:scale-105 transition-transform">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[2]}
                   </div>
@@ -92,7 +114,7 @@ export function Solution() {
               <div />
               {/* Card 3: Bottom-right */}
               <div className="flex items-center justify-center">
-                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80">
+                <GlassPanel interactive className="w-full max-w-[160px] md:max-w-[180px] p-4 flex flex-col items-center justify-center text-center gap-2 bg-surface-100/80 hover:scale-105 transition-transform">
                   <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center">
                     {icons[3]}
                   </div>
@@ -101,7 +123,7 @@ export function Solution() {
               </div>
             </div>
             
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

@@ -1,8 +1,11 @@
+"use client";
+
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
 import { BlurOrb } from "../ui/BlurOrb";
 import { GridBackground } from "../ui/GridBackground";
+import { motion } from "framer-motion";
 
 export function FinalCTA() {
   return (
@@ -14,7 +17,13 @@ export function FinalCTA() {
       <GridBackground className="absolute inset-0 z-0" intensity={0.06} />
 
       <Container className="relative z-10">
-        <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto flex flex-col items-center text-center gap-8"
+        >
           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-gradient-gold">
             {landingData.finalCTA.title}
           </h2>
@@ -30,7 +39,7 @@ export function FinalCTA() {
               {landingData.finalCTA.secondaryCta}
             </CTAButton>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

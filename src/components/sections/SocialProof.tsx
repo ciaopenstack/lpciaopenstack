@@ -1,4 +1,7 @@
+"use client";
+
 import { Container } from "../ui/Container";
+import { motion } from "framer-motion";
 
 const COMPANHIAS = [
   {
@@ -52,9 +55,15 @@ export function SocialProof() {
     <section className="py-12 border-y border-white/5 bg-surface-200 overflow-hidden">
       <Container>
         <div className="flex flex-col items-center justify-center gap-8">
-          <p className="text-sm font-medium text-muted uppercase tracking-wider text-center">
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-sm font-medium text-muted uppercase tracking-wider text-center"
+          >
             Empresas que estão organizando suas vendas com o sistema CiaOpenStack
-          </p>
+          </motion.p>
           
           {/* Scroll container */}
           <div className="relative flex w-full max-w-5xl overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
