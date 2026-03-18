@@ -10,12 +10,11 @@ export function Footer() {
           
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-[#e6cf4a] flex items-center justify-center shadow-lg shadow-[#e6cf4a]/30">
-                <span className="text-white font-bold text-lg leading-none">C</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-white">
-                {landingData.company}
-              </span>
+              <img 
+                src="/ciaopenstack-logo.webp" 
+                alt="CiaOpenStack Logo" 
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-sm text-muted max-w-xs mx-auto md:mx-0">
               Sistema Inteligente de Aquisição e Conversão Comercial.
