@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Container } from "../ui/Container";
 import { CTAButton } from "../ui/CTAButton";
 import { landingData } from "@/data/landing";
@@ -31,10 +32,13 @@ export function Header() {
       <Container className="flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img 
+          <Image 
             src="/ciaopenstack-logo.webp" 
             alt="CiaOpenStack Logo" 
+            width={180}
+            height={48}
             className="h-12 w-auto"
+            priority
           />
         </div>
 

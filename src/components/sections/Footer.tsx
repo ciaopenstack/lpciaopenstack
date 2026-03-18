@@ -1,4 +1,5 @@
 import { Container } from "../ui/Container";
+import Image from "next/image";
 import { landingData } from "@/data/landing";
 import { Instagram, MessageCircle, Mail } from "lucide-react";
 
@@ -10,9 +11,11 @@ export function Footer() {
           
           <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-              <img 
+              <Image 
                 src="/ciaopenstack-logo.webp" 
                 alt="CiaOpenStack Logo" 
+                width={120}
+                height={32}
                 className="h-8 w-auto"
               />
             </div>

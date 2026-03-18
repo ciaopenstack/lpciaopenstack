@@ -87,7 +87,7 @@ export function Results() {
             </div>
 
             {/* Right Column: 2x2 Metric Grid */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 gap-4">
               {landingData.results.items.map((item, i) => (
                 <div key={i} className="results-metric-card">
                   <MetricCard
@@ -96,7 +96,7 @@ export function Results() {
                     description={item}
                     icon={metrics[i].icon}
                     accentColor={metrics[i].color as "primary" | "success" | "info" | "danger" | "default"}
-                    className="h-full"
+                    className="h-full p-5 sm:p-5"
                   />
                 </div>
               ))}
