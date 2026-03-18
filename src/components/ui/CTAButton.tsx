@@ -13,9 +13,9 @@ export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
     const baseStyles = "glass-btn-reflection inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e6cf4a]";
     
     const variants = {
-      primary: "bg-gradient-to-r from-[#e6cf4a]/70 via-[#f89549]/70 via-[60%] to-[#ea764c]/70 backdrop-blur-2xl text-white font-bold border border-white/30 shadow-[0_4px_24px_rgba(230,207,74,0.3),inset_0_1px_2px_rgba(255,255,255,0.5)] hover:scale-105 hover:from-[#e6cf4a]/70 hover:via-[#f89549]/70 hover:to-[#ea764c]/70 hover:shadow-[0_8px_32px_rgba(248,149,73,0.4),inset_0_1px_2px_rgba(255,255,255,0.7)] hover:border-white/50 active:shadow-[0_2px_10px_rgba(230,207,74,0.2)]",
-      secondary: "bg-white/10 backdrop-blur-md text-white border border-white/15 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:bg-white/20 hover:border-white/25 hover:shadow-[0_8px_28px_rgba(0,0,0,0.2)] hover:-translate-y-0.5",
-      outline: "bg-white/5 backdrop-blur-sm text-white border border-white/15 hover:bg-white/10 hover:border-white/25 hover:-translate-y-0.5 shadow-[0_2px_12px_rgba(0,0,0,0.1)]",
+      primary: "bg-gradient-to-r from-[#e6cf4a]/70 via-[#f89549]/70 via-[60%] to-[#ea764c]/70 backdrop-blur-2xl text-white font-bold border border-white/30 shadow-[0_4px_24px_rgba(230,207,74,0.3),inset_0_1px_2px_rgba(255,255,255,0.5)] hover:scale-105 hover:from-[#ea764c] hover:via-[#ea764c] hover:to-[#ea764c] hover:shadow-[0_8px_32px_rgba(234,118,76,0.5),inset_0_1px_2px_rgba(255,255,255,0.7)] hover:border-white/50 active:shadow-[0_2px_10px_rgba(234,118,76,0.3)]",
+      secondary: "bg-white/10 backdrop-blur-md text-white border border-white/15 shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:bg-[#ea764c] hover:border-[#ea764c] hover:shadow-[0_8px_32px_rgba(234,118,76,0.4)] hover:-translate-y-0.5",
+      outline: "bg-white/5 backdrop-blur-sm text-white border border-white/15 hover:bg-[#ea764c] hover:border-[#ea764c] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(234,118,76,0.4)] shadow-[0_2px_12px_rgba(0,0,0,0.1)]",
     };
 
     const sizes = {
