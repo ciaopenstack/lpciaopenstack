@@ -116,20 +116,20 @@ export function Hero() {
                 />
 
               {/* Floating Badges - Positioned as independent layers */}
-              <div className="hero-floating-badge absolute top-8 left-10 z-20 shadow-xl transform hover:scale-105 transition-transform">
+              <div className="hero-floating-badge absolute top-2 left-2 md:top-8 md:left-10 z-20 shadow-xl scale-[0.8] md:scale-100 origin-left transform hover:scale-105 transition-all duration-300">
                 <StatusBadge status="success" pulse icon={<MessageCircle size={14} />}>
                   WhatsApp Conectado
                 </StatusBadge>
               </div>
               
-              <div className="hero-floating-badge absolute top-1/4 -right-12 z-20 shadow-2xl transform hover:scale-105 transition-transform">
+              <div className="hero-floating-badge absolute top-1/4 -right-2 md:-right-12 z-20 shadow-2xl scale-[0.8] md:scale-100 origin-right transform hover:scale-105 transition-all duration-300">
                 <StatusBadge status="warning" icon={<BotMessageSquare size={14} className="text-primary-400" />} className="bg-[#1A1A1E]/95 border-primary-500/30 backdrop-blur-md">
                   <span className="text-white font-medium text-xs sm:text-sm">IA qualificando leads</span>
                 </StatusBadge>
               </div>
               
-              <div className="hero-floating-badge absolute bottom-20 left-1/4 z-20 shadow-2xl transform hover:scale-105 transition-transform">
-                <div className="glass-panel px-5 py-3.5 rounded-2xl flex items-center gap-4 bg-[#1A1A1E]/90 border-white/10 backdrop-blur-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)]">
+              <div className="hero-floating-badge absolute bottom-6 left-4 md:bottom-20 md:left-1/4 z-20 shadow-2xl scale-[0.85] md:scale-100 origin-bottom-left transform hover:scale-105 transition-all duration-300">
+                <div className="glass-panel px-4 py-3 md:px-5 md:py-3.5 rounded-2xl flex items-center gap-3 md:gap-4 bg-[#1A1A1E]/90 border-white/10 backdrop-blur-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)]">
                   <div className="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 shadow-inner">
                     <BarChart3 size={20} />
                   </div>
