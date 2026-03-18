@@ -18,7 +18,6 @@ export function Features() {
       <Container>
         <div className="flex flex-col gap-16 md:gap-24">
           <SectionHeading
-            eyebrow={landingData.features.eyebrow}
             title={landingData.features.title}
             description={
               <>
