@@ -40,6 +40,8 @@ export function SocialProof() {
                         alt={company.alt}
                         width={200}
                         height={80}
+                        sizes="(max-width: 768px) 140px, 180px"
+                        loading="lazy"
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
                     </div>
@@ -57,6 +59,8 @@ export function SocialProof() {
                         alt={company.alt}
                         width={200}
                         height={80}
+                        sizes="(max-width: 768px) 140px, 180px"
+                        loading="lazy"
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
                     </div>

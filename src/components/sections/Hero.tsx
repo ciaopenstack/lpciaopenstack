@@ -113,6 +113,8 @@ export function Hero() {
                   height={800}
                   className="w-full h-auto object-cover rounded-[20px]"
                   priority
+                  fetchPriority="high"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1200px"
                 />
 
               {/* Floating Badges - Positioned as independent layers */}
