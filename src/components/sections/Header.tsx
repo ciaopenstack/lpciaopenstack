@@ -39,7 +39,10 @@ export function Header() {
     >
       <Container className="flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div 
+          className="flex items-center gap-2 cursor-pointer transition-opacity hover:opacity-80"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
           <Image 
             src="/ciaopenstack-logo.webp" 
             alt="CiaOpenStack Logo" 

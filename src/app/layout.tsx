@@ -19,6 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} !scroll-smooth`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (window.history.scrollRestoration) {
+                window.history.scrollRestoration = 'manual';
+              }
+              window.scrollTo(0, 0);
+            `,
+          }}
+        />
+      </head>
       <body className="antialiased bg-background text-foreground min-h-screen">
         {children}
       </body>
