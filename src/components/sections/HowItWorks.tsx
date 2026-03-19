@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { landingData } from "@/data/landing";
@@ -7,6 +8,15 @@ import { GlassPanel } from "../ui/GlassPanel";
 import { motion } from "framer-motion";
 
 export function HowItWorks() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile(); // Check on mount
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section id="how-it-works" className="py-24 md:py-32 relative bg-surface-300">
       <Container>
@@ -29,12 +39,16 @@ export function HowItWorks() {
 
             {landingData.howItWorks.map((step, i) => (
               <motion.div 
-                key={i} 
+                key={isMobile ? `mobile-${step.title}-${i}` : `desktop-${step.title}-${i}`}
                 className="flex flex-col items-center text-center gap-6 relative z-10 h-full"
-                initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
+                // No desktop (isMobile=false), sempre vem da esquerda: x=-80
+                // No mobile (isMobile=true), comportamento atual alternado: x= -60 ou 60
+                initial={{ opacity: 0, x: isMobile ? (i % 2 === 0 ? -60 : 60) : -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
+                viewport={{ once: true, margin: isMobile ? "-100px" : "-50px" }}
+                // No desktop, o delay garante que um espere o outro (0.5s cada, já que a duration é 0.6)
+                // No mobile, mantém o comportamento atual: delay i * 0.15
+                transition={{ duration: 0.6, delay: isMobile ? i * 0.15 : i * 0.5, ease: "easeOut" }}
               >
                 <div className="w-16 h-16 shrink-0 rounded-full bg-surface-100 flex items-center justify-center border border-primary-500/30 text-2xl font-bold text-primary-400 shadow-[0_0_30px_rgba(255,91,0,0.15)]">
                   {step.step}
