@@ -4,7 +4,7 @@ import { Container } from "../ui/Container";
 import { SectionHeading } from "../ui/SectionHeading";
 import { FeatureItem } from "../ui/FeatureItem";
 import { landingData } from "@/data/landing";
-import { MessageSquare, Tags, Clock, BarChart4, Target } from "lucide-react";
+import { MessageSquare, Tags, Clock, BarChart4, Target, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Features() {
@@ -13,7 +13,8 @@ export function Features() {
     <Tags key="2" />,
     <Clock key="3" />,
     <BarChart4 key="4" />,
-    <Target key="5" />
+    <Target key="5" />,
+    <Calendar key="6" />
   ];
 
   return (

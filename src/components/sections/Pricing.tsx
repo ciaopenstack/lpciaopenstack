@@ -24,89 +24,112 @@ export function Pricing() {
             />
           </motion.div>
 
-          <div className="relative mt-8">
-            {/* Glow / Sombra colorida atrás do card principal */}
-            <div className="absolute inset-0 bg-primary-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+          <div className="relative mt-12 z-10">
+            {/* Glow / Sombra colorida atrás dos cards */}
+            <div className="absolute inset-x-0 inset-y-12 bg-primary-500/10 blur-[120px] rounded-[100px] pointer-events-none"></div>
 
-            {/* Pricing Card Principal */}
-            {/* Pricing Card Principal */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative z-10 bg-surface-100/50 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.05)] flex flex-col lg:flex-row gap-12"
-            >
-              
-              {/* Esquerda: Info do Plano */}
-              <div className="flex-1 flex flex-col gap-6">
-                <div>
-                  <div className="inline-flex px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-bold tracking-wider uppercase mb-4 border border-primary-500/20">
-                    PREÇO
-                  </div>
-                  <h3 className="text-3xl font-bold text-white tracking-tight">{landingData.pricing.planName}</h3>
-                  <p className="text-muted mt-2">{landingData.pricing.subtitle}</p>
-                </div>
-
-                <div className="h-px w-full bg-white/5 my-2"></div>
-
-                <div className="flex flex-col gap-4">
-                  <p className="font-medium text-white">O que está incluso:</p>
-                  <ul className="flex flex-col gap-3">
-                    {landingData.features.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check size={18} className="text-primary-400 mt-0.5 shrink-0" />
-                        <span className="text-muted/90 text-sm">{item.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Direita: Preços e CTA */}
-              <div className="lg:w-[400px] flex flex-col gap-6 bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.2)]">
-                
-                {/* Taxa de Implementação */}
-                <div className="flex flex-col gap-1 pb-6 border-b border-white/10">
-                  <p className="text-sm font-medium text-muted">Implementação</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-lg text-white font-medium">R$</span>
-                    <span className="text-4xl font-bold text-white tracking-tight">{landingData.pricing.implementation}</span>
-                    <span className="text-xs text-emerald-400 font-medium ml-2 px-2 py-0.5 bg-emerald-500/10 rounded-full border border-emerald-500/20">Taxa Única</span>
-                  </div>
-                </div>
-
-                {/* Mensalidade */}
-                <div className="flex flex-col gap-1">
-                  <p className="text-sm font-medium text-white">Mensalidade</p>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-lg text-primary-400 font-medium">R$</span>
-                    <span className="text-5xl font-extrabold text-white tracking-tight">{landingData.pricing.monthly}</span>
-                    <span className="text-muted">/mês</span>
-                  </div>
-                </div>
-
-                {/* Condições Especiais */}
-                <div className="flex flex-col gap-2 mt-2">
-                  <p className="text-sm font-medium text-white mb-2">Condições especiais:</p>
-                  {landingData.pricing.conditions.map((cond, i) => (
-                    <div key={i} className="flex justify-between items-center text-sm">
-                      <span className="text-muted">{cond.label}:</span>
-                      <span className="text-white font-medium">{cond.value}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {landingData.pricingPlans.map((plan, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className={`relative bg-surface-100/50 backdrop-blur-xl rounded-3xl p-6 md:p-8 flex flex-col h-full border ${
+                    plan.popular
+                      ? "border-primary-500/50 shadow-[0_8px_40px_rgba(255,91,0,0.15)] ring-1 ring-primary-500/30"
+                      : "border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-500 text-white text-[10px] sm:text-xs font-black px-4 py-1.5 rounded-full tracking-widest uppercase shadow-[0_0_20px_rgba(255,91,0,0.4)] whitespace-nowrap">
+                      Mais Procurado
                     </div>
-                  ))}
-                </div>
+                  )}
+                  
+                  {/* Header do Plano */}
+                  <div className="mb-6 flex-none">
+                    <h3 className="text-2xl font-bold text-white tracking-tight">{plan.planName}</h3>
+                    <p className="text-sm text-muted mt-2 min-h-[40px] leading-relaxed">{plan.subtitle}</p>
+                  </div>
 
-                <CTAButton size="lg" className="w-full mt-4 text-lg py-5 shadow-[0_0_30px_rgba(255,91,0,0.25)]" href={landingData.contact.whatsapp}>
-                  {landingData.pricing.cta}
-                </CTAButton>
-                
-                <p className="text-center text-xs text-muted">
-                  Configuração finalizada em até 24h.
-                </p>
-              </div>
+                  <div className="h-px w-full bg-white/5 mb-6 flex-none"></div>
 
-            </motion.div>
+                  {/* Preços */}
+                  <div className="flex flex-col gap-4 mb-6 flex-none">
+                    {/* Taxa de Implementação */}
+                    <div className="flex flex-col gap-1 pb-4 border-b border-white/5">
+                      <p className="text-[11px] font-bold text-muted uppercase tracking-widest">Implementação (Taxa Única)</p>
+                      <div className="flex items-baseline gap-1 mt-1">
+                        <span className="text-sm text-white font-medium">R$</span>
+                        <span className="text-2xl font-bold text-white tracking-tight">{plan.implementation}</span>
+                      </div>
+                    </div>
+
+                    {/* Mensalidade */}
+                    <div className="flex flex-col gap-1 pt-2">
+                      <p className="text-[11px] font-bold text-muted uppercase tracking-widest">
+                        {plan.planName === 'Plano GROWTH CRM' ? 'Fee mensal' : 'Mensalidade'}
+                      </p>
+                      <div className="flex items-baseline gap-1 mt-1">
+                        <span className="text-base text-primary-400 font-medium">R$</span>
+                        <span className="text-4xl font-extrabold text-white tracking-tight">{plan.monthly}</span>
+                      </div>
+                    </div>
+
+                    {/* Condições Especiais */}
+                    {plan.conditions && plan.conditions.length > 0 && (
+                      <div className="flex flex-col gap-1.5 mt-3 bg-white/[0.03] rounded-xl p-3 border border-white/5">
+                        {plan.conditions.map((cond, i) => (
+                          <div key={i} className="flex justify-between items-center text-xs">
+                            <span className="text-muted/80">{cond.label}:</span>
+                            <span className="text-white/90 font-medium tracking-wide">{cond.value}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="flex-none mb-8">
+                    <CTAButton 
+                      size="md" 
+                      className={`w-full text-base py-4 font-semibold ${plan.popular ? 'shadow-[0_0_20px_rgba(255,91,0,0.2)]' : ''}`}
+                      href={landingData.contact.whatsapp}
+                    >
+                      {plan.cta}
+                    </CTAButton>
+                  </div>
+
+                  {/* Features */}
+                  <div className="flex-1 flex flex-col">
+                    <p className="font-semibold text-white text-sm mb-4 tracking-wide">O que está incluso:</p>
+                    <ul className="flex flex-col gap-3.5 mb-8">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check size={18} className="text-primary-400 mt-0.5 shrink-0" />
+                          <span className="text-muted/90 text-sm leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Spacer to push IdealFor to the bottom */}
+                    <div className="mt-auto"></div>
+
+                    {/* Ideal For */}
+                    {plan.idealFor && (
+                      <div className="mt-6 pt-5 border-t border-white/5 text-center">
+                        <p className="text-xs text-muted/70 italic leading-relaxed">
+                          "{plan.idealFor}"
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

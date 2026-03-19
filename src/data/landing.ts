@@ -97,7 +97,11 @@ export const landingData = {
       {
         title: "Rastreamento da origem do lead",
         description: "Saiba de qual canal ou campanha seu lead chegou."
-      }
+      },
+       {
+         title: "Agendamento automático de reuniões",
+         description: "A IA qualifica e agenda reuniões com os melhores leads direto na sua agenda."
+       }
     ]
   },
   intelligence: {
@@ -120,17 +124,66 @@ export const landingData = {
       "Melhorar o controle comercial",
     ]
   },
-  pricing: {
-    planName: "Plano START",
-    subtitle: "Sistema Inteligente de Atendimento",
-    implementation: "997",
-    monthly: "697",
-    conditions: [
-      { label: "Plano semestral", value: "R$ 597/mês" },
-      { label: "Plano anual", value: "R$ 497/mês" },
-    ],
-    cta: "Começar Agora",
-  },
+  pricingPlans: [
+    {
+      planName: "Plano START",
+      subtitle: "Sistema de Atendimento Inteligente",
+      implementation: "997,00",
+      monthly: "697",
+      conditions: [
+        { label: "Semestral", value: "R$ 3.582 em até 6x" },
+        { label: "Anual", value: "R$ 5.964 em até 6x" },
+      ],
+      features: [
+        "IA de recepção no WhatsApp",
+        "Qualificação inicial",
+        "Organização de horários",
+        "Dashboard com métricas de atendimento",
+        "Rastreamento básico de origem de lead"
+      ],
+      idealFor: "indicado para quem quer parar de perder lead por desorganização.",
+      cta: "Começar Agora"
+    },
+    {
+      planName: "Plano PERFORMANCE",
+      subtitle: "Sistema de Conversão Inteligente",
+      implementation: "1.297,00",
+      monthly: "997",
+      conditions: [
+        { label: "Semestral", value: "R$ 5.382 em até 6x" },
+        { label: "Anual", value: "R$ 9.564 em até 6x" },
+      ],
+      features: [
+        "Tudo do Start",
+        "Follow-up automático (até 5 tentativas)",
+        "Recuperação de leads mornos",
+        "Segmentação por interesse",
+        "Rastreamento avançado de origem + comportamento"
+      ],
+      idealFor: "Indicado para quem busca performance e diminuir custo de aquisição.",
+      cta: "Começar Agora",
+      popular: true
+    },
+    {
+      planName: "Plano GROWTH CRM",
+      subtitle: "Sistema de Previsibilidade Comercial",
+      implementation: "a partir de R$ 1.597",
+      monthly: "1.597",
+      conditions: [],
+      features: [
+        "Tudo do Performance",
+        "CRM automatizado",
+        "Pipeline inteligente",
+        "Controle de equipe",
+        "Visão clara de taxa de conversão",
+        "Sistema completo de rastreamento de lead",
+        "Relatórios de fechamento por origem",
+        "Ajuste contínuo com base nos dados do rastreamento"
+      ],
+      idealFor: "",
+      cta: "Começar Agora"
+    }
+  ],
   finalCTA: {
     title: "Pare de perder clientes interessados.",
     subtitle: "Organize seu atendimento e transforme cada conversa em oportunidade de venda.",
