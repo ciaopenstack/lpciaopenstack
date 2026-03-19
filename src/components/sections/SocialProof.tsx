@@ -34,17 +34,14 @@ export function SocialProof() {
               <div className="flex w-max items-center justify-center gap-12 md:gap-20 px-6 md:px-10">
                 {COMPANHIAS.map((company) => (
                   <div key={company.id} className="flex items-center justify-center cursor-default group">
-                    <div className="bg-gradient-to-br from-white/90 to-slate-200/80 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl shadow-black/40 flex items-center justify-center min-w-[140px] md:min-w-[180px] h-20 md:h-24 border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-primary-500/20 group-hover:border-primary-500/40">
                       <Image 
                         src={company.src} 
                         alt={company.alt}
                         width={200}
                         height={80}
-                        sizes="(max-width: 768px) 140px, 180px"
                         loading="lazy"
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
-                    </div>
                   </div>
                 ))}
               </div>
@@ -53,17 +50,14 @@ export function SocialProof() {
               <div className="flex w-max items-center justify-center gap-12 md:gap-20 px-6 md:px-10" aria-hidden="true">
                 {COMPANHIAS.map((company) => (
                   <div key={`dup-${company.id}`} className="flex items-center justify-center cursor-default group">
-                    <div className="bg-gradient-to-br from-white/90 to-slate-200/80 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl shadow-black/40 flex items-center justify-center min-w-[140px] md:min-w-[180px] h-20 md:h-24 border border-white/10 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-primary-500/20 group-hover:border-primary-500/40">
                       <Image 
                         src={company.src} 
                         alt={company.alt}
                         width={200}
                         height={80}
-                        sizes="(max-width: 768px) 140px, 180px"
                         loading="lazy"
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
-                    </div>
                   </div>
                 ))}
               </div>
