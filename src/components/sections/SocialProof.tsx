@@ -28,18 +28,19 @@ export function SocialProof() {
           
           {/* Scroll container */}
           <div className="relative flex w-full max-w-5xl overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)] py-8">
-            <div className="flex w-max animate-[scroll_30s_linear_infinite] hover:[animation-play-state:paused] transition-all duration-500">
+            <div className="flex w-max animate-[scroll_30s_linear_infinite] will-change-transform [transform:translateZ(0)] md:hover:[animation-play-state:paused]">
               
               {/* First set of logos */}
               <div className="flex w-max items-center justify-center gap-12 md:gap-20 px-6 md:px-10">
                 {COMPANHIAS.map((company) => (
-                  <div key={company.id} className="flex items-center justify-center cursor-default group">
+                  <div key={company.id} className="flex items-center justify-center cursor-default group shrink-0">
                       <Image 
                         src={company.src} 
                         alt={company.alt}
                         width={200}
                         height={80}
-                        loading="lazy"
+                        loading="eager"
+                        priority
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
                   </div>
@@ -49,13 +50,14 @@ export function SocialProof() {
               {/* Duplicated set for seamless looping */}
               <div className="flex w-max items-center justify-center gap-12 md:gap-20 px-6 md:px-10" aria-hidden="true">
                 {COMPANHIAS.map((company) => (
-                  <div key={`dup-${company.id}`} className="flex items-center justify-center cursor-default group">
+                  <div key={`dup-${company.id}`} className="flex items-center justify-center cursor-default group shrink-0">
                       <Image 
                         src={company.src} 
                         alt={company.alt}
                         width={200}
                         height={80}
-                        loading="lazy"
+                        loading="eager"
+                        priority
                         className="max-h-[100%] max-w-[100%] w-auto h-auto object-contain shrink-0 brightness-95 group-hover:brightness-100 transition-all"
                       />
                   </div>
@@ -71,8 +73,11 @@ export function SocialProof() {
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes scroll {
-            to {
-              transform: translateX(-50%);
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+            100% {
+              transform: translate3d(-50%, 0, 0);
             }
           }
         `
